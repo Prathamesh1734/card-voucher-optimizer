@@ -7,7 +7,6 @@ An intelligent tool designed to help users maximize the value of their credit ca
 - **Voucher Tracking:** Manage and track your credit card vouchers and expiry dates.
 - **Smart Optimization:** Algorithm-based suggestions to get the best return on your transactions.
 - **Responsive UI:** Built with React, TypeScript, and Vite for a fast and modern user experience.
-- **Dark Mode:** Integrated theme support for comfortable viewing.
 
 ## 🛠 Tech Stack
 
