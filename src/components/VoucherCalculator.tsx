@@ -15,15 +15,21 @@ export default function PremiumVoucherOptimizer() {
   const [selectedBrand, setSelectedBrand] = useState<string>("AmazonPay");
   const [amount, setAmount] = useState<number>(5000);
   const [wallet, setWallet] = useState<string[]>(["hdfc_mill", "sbi_cb"]);
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return document.documentElement.classList.contains("dark");
+    }
+    return false;
+  });
 
   const brands = Object.keys(voucherData);
   const quickAmounts = [1000, 2500, 5000, 10000];
 
   // Theme Toggle Handler
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
+    const newMode = !isDark;
+    setIsDark(newMode);
+    if (newMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
