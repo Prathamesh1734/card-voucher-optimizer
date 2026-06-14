@@ -1,9 +1,9 @@
-import VoucherCalculator from "./components/VoucherCalculator";
+import PremiumVoucherOptimizer from "./components/VoucherCalculator";
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-slate-50 flex items-center justify-center p-4">
-      <VoucherCalculator />
+    <div className="min-h-screen w-full bg-slate-50 dark:bg-slate-950 transition-colors duration-300 antialiased">
+      <PremiumVoucherOptimizer />
     </div>
   );
 }

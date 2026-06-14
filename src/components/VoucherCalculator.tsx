@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { voucherData, popularCards } from "../data/rewards";
 import {
   Wallet,
@@ -15,7 +15,7 @@ export default function PremiumVoucherOptimizer() {
   const [selectedBrand, setSelectedBrand] = useState<string>("AmazonPay");
   const [amount, setAmount] = useState<number>(5000);
   const [wallet, setWallet] = useState<string[]>(["hdfc_mill", "sbi_cb"]);
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(true);
 
   const brands = Object.keys(voucherData);
   const quickAmounts = [1000, 2500, 5000, 10000];
@@ -75,7 +75,7 @@ export default function PremiumVoucherOptimizer() {
 
   return (
     // Outer Background
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 flex items-center justify-center p-4 md:p-8 font-sans">
+    <div className="flex items-center justify-center p-4 md:p-12 font-sans w-full h-full">
       {/* Main Container */}
       <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl shadow-slate-200/50 dark:shadow-black/50 border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col md:flex-row transition-colors duration-300">
         {/* LEFT COLUMN: Inputs & Wallet */}
@@ -181,7 +181,7 @@ export default function PremiumVoucherOptimizer() {
                   <button
                     key={amt}
                     onClick={() => setAmount(amt)}
-                    className="flex-1 min-w-[70px] py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="flex-1 min-w-17.5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     ₹{amt.toLocaleString("en-IN")}
                   </button>
@@ -208,7 +208,7 @@ export default function PremiumVoucherOptimizer() {
                 }`}
               >
                 {index === 0 && (
-                  <div className="absolute -top-3 -right-3 md:-right-4 bg-gradient-to-r from-emerald-500 to-emerald-400 dark:from-emerald-600 dark:to-emerald-500 text-white text-xs font-black px-4 py-1.5 rounded-full shadow-lg border-2 border-white dark:border-slate-900">
+                  <div className="absolute -top-3 -right-3 md:-right-4 bg-linear-to-r from-emerald-500 to-emerald-400 dark:from-emerald-600 dark:to-emerald-500 text-white text-xs font-black px-4 py-1.5 rounded-full shadow-lg border-2 border-white dark:border-slate-900">
                     🏆 BEST COMBO
                   </div>
                 )}
